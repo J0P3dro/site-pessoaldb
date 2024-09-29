@@ -31,4 +31,3 @@ exports.deleteProjeto = async (req, res) => {
 }
 
 
-

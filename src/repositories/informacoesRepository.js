@@ -15,4 +15,3 @@ exports.deleteInformacoes = async (id) => {
     await pool.query('delete FROM informacoes WHERE id = $1', [id]);
 }
 
-

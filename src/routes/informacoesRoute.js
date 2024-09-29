@@ -12,4 +12,3 @@ router.post('/', informacoesController.createInformacoes);
 router.delete('/:id', informacoesController.deleteInformacoes);
 
 module.exports = router;
-

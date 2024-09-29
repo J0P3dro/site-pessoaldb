@@ -17,4 +17,3 @@ exports.deleteInformacoes = async (req, res) => {
     res.json([message `Informacoes $(id) deleted`]);
 }
 
-

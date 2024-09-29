@@ -1,7 +1,11 @@
-require('dotenv').config();
+require('dotenv').config('./config/db');
+
+
 const express = require('express');
 
 const { initDatabase } = require('../src/config/db');
+
+const cors = require('cors')
 
 
 
@@ -14,6 +18,8 @@ const authRoute = require('./routes/authRoute');
 
 const app = express();
 const port = process.env.APP_PORT || 5000;
+
+app.use(cors());
 
 app.use(express.json());
 app.get('/', (req, res) => {
@@ -28,4 +34,5 @@ app.use('/api/auth', authRoute);
 initDatabase();
 app.listen(port, () => {
   console.log(`API rodando na porta ${port}`);
+  console.log(`HOST: ${process.env.DB_HOST}`);
 });

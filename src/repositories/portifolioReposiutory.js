@@ -25,4 +25,3 @@ exports.updatePortifolio = async (id,projeto) => {
 exports.deletePortifolio = async (id) => {
     const result = await poll.query('DELETE FROM portifolio WHERE id=$1', [id]);
 }
-

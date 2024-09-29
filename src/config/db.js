@@ -1,21 +1,17 @@
-require('dotenv').config({ path: './src/.env' });
-const Pool = require('pg').Pool;
-
-console.log({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}.local`
 });
+
+const Pool = require('pg').Pool;
 
 
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
+  password: process.env.DB_PASS,
   port: process.env.DB_PORT,
+  ssl: process.env.Node_ENV === 'production' ? true: false,
 });
 
 
